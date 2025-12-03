@@ -46,7 +46,7 @@ class ComparadorApellidos(Comparator):
     def compare(self,p1,p2):
         raise Exception("\n--->ComparadorApellidos::compare. NO IMPLEMENTADO!!!\n")
 
-    ## @brief Método de utilidad para encontrar el apellido lexicográficamente
+    ## @brief métode de utilidad para encontrar el apellido lexicográficamente
     #  menor (el primero alfabéticamente) en la lista de autores de
     #  una publicación.
     #
@@ -68,11 +68,11 @@ class ComparadorFechas(Comparator):
 
     ## @brief Compara dos publicaciones basándose en sus fechas ("AAAAMM").
     #  @details Si ambas fechas (obtenidas de p1 y p2) son distintas de None,
-    #  el método retorna un entero negativo si la fecha de p1 es anterior
+    #  el métode retorna un entero negativo si la fecha de p1 es anterior
     #  a la de p2, cero si las fechas son iguales, o un entero positivo
     #  si la fecha de p1 es posterior a la de p2.
     #
-    #  El método también maneja los casos en que una o ambas fechas
+    #  El métode también maneja los casos en que una o ambas fechas
     #  sean nulas (asumiendo que nulo es "menor" que cualquier fecha).
     #
     #  @param p1 La primera publicación a comparar.

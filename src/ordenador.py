@@ -20,10 +20,10 @@ class Ordenador:
 
     ## @brief Ordena la lista de publicaciones proporcionada utilizando el algoritmo
     #  de la burbuja (Bubble Sort).
-    #  @details El método utiliza el comparador definido en el atributo de la
+    #  @details El métode utiliza el comparador definido en el atributo de la
     #  clase y respeta el sentido (ascendente/descendente) del atributo descendente.
     #
-    #  Este método NO modifica la lista original pasada como argumento.
+    #  Este métode NO modifica la lista original pasada como argumento.
     #
     #  @param publicaciones La lista de objetos Publicacion a ordenar.
     #  @return Una <b>nueva</b> lista que contiene las publicaciones ordenadas.

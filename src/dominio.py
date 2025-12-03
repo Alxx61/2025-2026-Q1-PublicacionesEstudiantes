@@ -64,7 +64,7 @@ class Autor:
         raise Exception("\n--->Autor::add_publicacion. NO IMPLEMENTADO!!!\n")
 
     ## @brief Devuelve un String con la información del autor.
-    #  @details NO MODIFICAR EL MÉTODO.
+    #  @details NO MODIFICAR EL métode.
     #  @return String formateado como se indica en el documento enunciado del proyecto
     def __str__(self):
         result = f"{self._nombre}:{self._apellidos}"
@@ -116,7 +116,7 @@ class Publicacion:
 
     ## @brief Genera la representación en String de los atributos comunes de
     #  todos los tipos de publicación.
-    #  @details NO MODIFICAR EL MÉTODO.
+    #  @details NO MODIFICAR EL métode.
     #  @return String formateado como se indica en el documento enunciado del proyecto
     def __str__(self):
         # 1. Formatear la lista de Autores
@@ -160,7 +160,7 @@ class Libro(Publicacion):
         raise Exception("\n--->Libro::get_editorial. NO IMPLEMENTADO!!!\n")
 
     ## @brief Devuelve una representación en String completa del Libro.
-    #  @details NO MODIFICAR EL MÉTODO.
+    #  @details NO MODIFICAR EL métode.
     #  @return String formateado como se indica en el documento enunciado del proyecto
     def __str__(self):
         return f"Libro;{super().__str__()}; editorial={self._editorial}"
@@ -196,7 +196,7 @@ class ArticuloEnRevista(Publicacion):
         raise Exception("\n--->ArticuloEnRevista::get_revista. NO IMPLEMENTADO!!!\n")
 
     ## @brief Devuelve una representación en String completa del Artículo.
-    #  @details NO MODIFICAR EL MÉTODO.
+    #  @details NO MODIFICAR EL métode.
     #  @return String formateado como se indica en el documento enunciado del proyecto
     def __str__(self):
         # Utilizamos super().__str__() para traer la cadena de la clase padre

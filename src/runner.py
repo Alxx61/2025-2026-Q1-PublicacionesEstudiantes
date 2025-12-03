@@ -26,7 +26,7 @@ class EjecutorDesdeMemoria:
     #
     #  @details El proceso detallado es el siguiente:
     #  1. Creará un objeto Controlador.
-    #  2. Obtendrá las publicaciones invocando al método
+    #  2. Obtendrá las publicaciones invocando al métode
     #     GestorDeDatos.cargar_publicaciones_de_prueba().
     #  3. Añadirá estas publicaciones al Controlador.
     #
@@ -35,7 +35,7 @@ class EjecutorDesdeMemoria:
     #  5. Generará una lista con las publicaciones encontradas ordenadas por
     #     fecha en sentido ascendente.
     #  6. Para cada publicación de la lista generará un String invocando al
-    #     método __str__() y lo añadirá al atributo resultado.
+    #     métode __str__() y lo añadirá al atributo resultado.
     #  7. Generará una lista con las publicaciones encontradas ordenadas por
     #     fecha en sentido descendente.
     #  8. Para cada publicación de la lista generará un String y lo añadirá al resultado.
@@ -55,7 +55,7 @@ class EjecutorDesdeMemoria:
     #     esté dentro del intervalo "197001" y "198012".
     #  16. Repetirá los pasos 5 a 12 para la lista de publicaciones obtenidas.
     #
-    #  @note PODÉIS DEFINIROS AQUEL(LOS) MÉTODO(S) ADICIONAL(ES) QUE
+    #  @note PODÉIS DEFINIROS AQUEL(LOS) métode(S) ADICIONAL(ES) QUE
     #  CONSIDERÉIS OPORTUNO PARA ORGANIZAR EL CÓDIGO DE ESTA CLASE.
 
     def ejecuta(self):

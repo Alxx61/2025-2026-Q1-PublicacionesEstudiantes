@@ -335,7 +335,7 @@ class CorrectorDeEjecutor:
     def get_nota_lectura_fichero(self) -> float:
         return self._resultado_lectura_fichero
 
-    ## @brief Método principal de ejecución para corrección de ficheros.
+    ## @brief métode principal de ejecución para corrección de ficheros.
     def corrige_lectura_archivo(self):
 
         path_archivo = os.path.join(os.getcwd(),"publicaciones.txt")
