@@ -95,7 +95,7 @@ class BuscadorPorNombres(Buscador):
     ## @brief Constructor de BuscaPorNombres.
     #  Inicializa la lista interna de nombres de autores como una lista vacía.
     def __init__(self):
-        raise Exception("\n--->BuscadorPorNombres::__init__. NO IMPLEMENTADO!!!\n")
+        self.nombres = []    #raise Exception("\n--->BuscadorPorNombres::__init__. NO IMPLEMENTADO!!!\n")
 
     ## @brief Añade un nombre de autor a la lista de criterios de búsqueda.
     #
@@ -103,7 +103,7 @@ class BuscadorPorNombres(Buscador):
     #  formato "Nombre Apellidos" (nombre y apellidos separados
     #  por un espacio en blanco).
     def add_nombre(self,nombre: str):
-        raise Exception("\n--->BuscadorPorNombres::add_nombre. NO IMPLEMENTADO!!!\n")
+        self.nombres.append(nombre) #raise Exception("\n--->BuscadorPorNombres::add_nombre. NO IMPLEMENTADO!!!\n")
 
     ## @brief Busca en el mapa de publicaciones y devuelve una lista de aquellas
     #  que tengan al menos un autor que coincida con la lista interna.
@@ -120,8 +120,11 @@ class BuscadorPorNombres(Buscador):
     #  @return Una Lista de objetos Publicacion que coinciden con los
     #  criterios (autores) definidos.
     def busca(self,publicaciones):
-        raise Exception("\n--->BuscadorPorNombres::__init__. NO IMPLEMENTADO!!!\n")
-
+        publicacion = []
+        for publicaciones in publicaciones.values():
+                   #raise Exception("\n--->BuscadorPorNombres::__init__. NO IMPLEMENTADO!!!\n")
+            
+            publicacion.append
     # --- Getters ---
 
     ## @brief Obtiene la lista de nombres de autores utilizada para la búsqueda.
