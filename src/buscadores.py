@@ -129,11 +129,11 @@ class BuscadorPorNombres(Buscador):
     #  @return Una Lista de objetos Publicacion que coinciden con los
     #  criterios (autores) definidos.
     def busca(self,publicaciones):
-        publicacion = []
-        for publicaciones in publicaciones.values():
-                   #raise Exception("\n--->BuscadorPorNombres::__init__. NO IMPLEMENTADO!!!\n")
-            
-            publicacion.append
+        resultat = []
+        for publicacion in publicaciones.values():
+            if publicacion in self.nombres: 
+                resultat.append(publicacion)
+        return resultat
     # --- Getters ---
 
     ## @brief Obtiene la lista de nombres de autores utilizada para la búsqueda.
