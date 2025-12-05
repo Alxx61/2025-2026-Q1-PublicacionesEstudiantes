@@ -11,7 +11,6 @@ class IntervaloException(Exception):
     def __init__(self, message: str):
         self.message = message #raise Exception("\n--->IntervaloException::__init__. NO IMPLEMENTADO!!!\n")
 
-
 from abc import ABC, abstractmethod
 
 
@@ -58,7 +57,12 @@ class BuscadorPorIntervalo(Buscador):
     #  @throws IntervaloException Si las fechas no tienen 6 caracteres
     #  (AAAAMM) o si la fecha fin es anterior a la fecha inicial.
     def __init__(self,inicio,fin):
-        raise Exception("\n--->BuscadorPorIntervalo::__init__. NO IMPLEMENTADO!!!\n")
+        if fin<inicio or len(inicio)!=6 or len(fin)!=6:
+            raise IntervaloException
+        else:
+            self.inicio = inicio
+            self.fin = fin
+        #raise Exception("\n--->BuscadorPorIntervalo::__init__. NO IMPLEMENTADO!!!\n")
 
     ## @brief Busca en el mapa de publicaciones y devuelve una lista de aquellas
     #  cuya fecha de publicación esté dentro del intervalo [inicio, fin].
@@ -70,19 +74,24 @@ class BuscadorPorIntervalo(Buscador):
     #  @return Una Lista de objetos Publicacion cuya fecha ("AAAAMM")
     #  esté dentro del intervalo.
     def busca(self,publicaciones):
-        raise Exception("\n--->BuscadorPorIntervalo::busca. NO IMPLEMENTADO!!!\n")
+        lista=[]
+        for publicacion in publicaciones.values():
+            if publicacion.fecha>=self.inicio and publicacion.fecha<=self.fin:
+                lista.append(publicacion)
+        return lista
+        #raise Exception("\n--->BuscadorPorIntervalo::busca. NO IMPLEMENTADO!!!\n")
 
     # --- Getters ---
 
     ## @brief Obtiene la fecha de inicio del intervalo.
     #  @return La fecha "AAAAMM".
     def get_inicio(self):
-        raise Exception("\n--->BuscadorPorIntervalo::get_inicio. NO IMPLEMENTADO!!!\n")
+        return self.inicio
 
     ## @brief Obtiene la fecha fin del intervalo.
     #  @return La fecha "AAAAMM".
     def get_final(self):
-        raise Exception("\n--->BuscadorPorIntervalo::get_final. NO IMPLEMENTADO!!!\n")
+        return self.fin
 
 
 
