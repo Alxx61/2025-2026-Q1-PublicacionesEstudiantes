@@ -9,7 +9,7 @@ class IntervaloException(Exception):
     #
     #  @param message El mensaje descriptivo del error.
     def __init__(self, message: str):
-        pass #raise Exception("\n--->IntervaloException::__init__. NO IMPLEMENTADO!!!\n")
+        self.message = message #raise Exception("\n--->IntervaloException::__init__. NO IMPLEMENTADO!!!\n")
 
 
 from abc import ABC, abstractmethod
