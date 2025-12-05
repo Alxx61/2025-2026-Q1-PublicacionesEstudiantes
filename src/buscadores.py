@@ -139,7 +139,7 @@ class BuscadorPorNombres(Buscador):
     ## @brief Obtiene la lista de nombres de autores utilizada para la búsqueda.
     #  @return La lista de nombres (formato "Nombre Apellidos").
     def get_nombres(self):
-        raise Exception("\n--->BuscadorPorNombres::get_nombres. NO IMPLEMENTADO!!!\n")
+        return self.nombres   #raise Exception("\n--->BuscadorPorNombres::get_nombres. NO IMPLEMENTADO!!!\n")
 
 
 # Asumimos que Buscador y Publicacion están disponibles.
