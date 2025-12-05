@@ -23,32 +23,50 @@ class Autor:
     #  @param apellidos Los apellidos del autor (opcional, por defecto "").
     #  @param institucion La institución del autor (opcional, por defecto "").
     def __init__(self,nombre: str = "",apellidos: str = "",institucion: str = ""):
-        raise Exception("\n--->Autor::__init__. NO IMPLEMENTADO!!!\n")
+        #raise Exception("\n--->Autor::__init__. NO IMPLEMENTADO!!!\n")
+        self.id = Autor._id_siguiente_autor # AFAGEIX ID ACTUAL A LA CLASSE
+        self.nombre = nombre
+        self.apellidos = apellidos
+        self.institucion = institucion
+        Autor._id_siguiente_autor += 1 #AFAGEIX UN AL ID DEL AUTOR PER LA PROXIMA ITERACIO??? TODO: REVISAR
+
 
     ## @brief Obtiene el ID único del autor.
     #  @return El ID del autor (entero).
     def get_id(self):
-        raise Exception("\n--->Autor::get_id. NO IMPLEMENTADO!!!\n")
+        #raise Exception("\n--->Autor::get_id. NO IMPLEMENTADO!!!\n")
+        return self.id
+
 
     ## @brief Obtiene el nombre del autor.
     #  @return El nombre del autor.
     def get_nombre(self) :
-        raise Exception("\n--->Autor::get_nombre. NO IMPLEMENTADO!!!\n")
+        #raise Exception("\n--->Autor::get_nombre. NO IMPLEMENTADO!!!\n")
+        return self.nombre
+
+
 
     ## @brief Obtiene los apellidos del autor.
     #  @return Los apellidos del autor.
     def get_apellidos(self):
-        raise Exception("\n--->Autor::get_apellidos. NO IMPLEMENTADO!!!\n")
+        #raise Exception("\n--->Autor::get_apellidos. NO IMPLEMENTADO!!!\n")
+        return self.apellidos
+
+
 
     ## @brief Obtiene la institución del autor.
     #  @return La institución del autor.
     def get_institucion(self):
-        raise Exception("\n--->Autor::get_institucion. NO IMPLEMENTADO!!!\n")
+        #raise Exception("\n--->Autor::get_institucion. NO IMPLEMENTADO!!!\n")
+        return self.institucion
+
+
 
     ## @brief Obtiene el mapa de publicaciones del autor.
     #  @return Un diccionario (equivalente a HashMap) de las publicaciones.
     def get_publicaciones(self) :
         raise Exception("\n--->Autor::get_publicaciones. NO IMPLEMENTADO!!!\n")
+
 
     ## @brief Obtiene el contador estático para el siguiente ID de autor.
     #  @return El siguiente ID a utilizar.
@@ -152,19 +170,26 @@ class Libro(Publicacion):
     #  @param fecha Año y mes de publicación.
     #  @param editorial La editorial del libro.
     def __init__(self, titulo: str, id: str, autores, palabras_clave, fecha, editorial):
-        raise Exception("\n--->Libro::__init__. NO IMPLEMENTADO!!!\n")
+        #raise Exception("\n--->Libro::__init__. NO IMPLEMENTADO!!!\n")
+        self.titulo = titulo
+        self.id = id
+        self.autores = autores
+        self.palabras_clave = palabras_clave
+        self.fecha = fecha
+        self.editorial = editorial
+
 
     ## @brief Obtiene la editorial del libro.
     #  @return La editorial.
     def get_editorial(self):
-        raise Exception("\n--->Libro::get_editorial. NO IMPLEMENTADO!!!\n")
-
+        #raise Exception("\n--->Libro::get_editorial. NO IMPLEMENTADO!!!\n")
+        return self.editorial
     ## @brief Devuelve una representación en String completa del Libro.
     #  @details NO MODIFICAR EL métode.
     #  @return String formateado como se indica en el documento enunciado del proyecto
     def __str__(self):
         return f"Libro;{super().__str__()}; editorial={self._editorial}"
-
+        # LA EVA DIU NO MODIFICAR
 
 
 ## @brief Representa un artículo científico publicado en una revista.
