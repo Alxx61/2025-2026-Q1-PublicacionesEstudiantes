@@ -65,5 +65,24 @@ class EjecutorDesdeMemoria:
         for publicacion in publicaciones:
             self.añadir_publicacion(publicacion)
 
+        self.resultado.append("--- Publicaciones cargadas inicialmente ---")
+        self.resultado.extend([str(p) for p in self.publicacion])
+
+        self.resultado.append("BUSQUEDA 1: Autor 'Geoffrey Hinton'")
+
         publicacion_h=self.buscar_por_autor("Geoffrey Hinton")
+        self._repetir_ordenaciones(publicacion_h)
+
+        self.resultados.append("BUSQUEDA 2:Palabras clave 'neural networks' y 'optimization'")
+        palabras_clave=["neural networks", "optimization"]
+        publicacion_keywords=self.buscar_por_palabras_clave(palabras_clave)
+        self._repetir_ordenaciones(publicacion_keywords)
+
+        self.resultado.append("BUSQUEDA 3:Intervalo de fecha '197001' a '198012'")
+        publicacion_fecha=self.buscar_por_fecha("197001","198012")
+        self._repetir_ordenaciones(publicacion_fecha)
+
+        return self.resultado
+
+
 
