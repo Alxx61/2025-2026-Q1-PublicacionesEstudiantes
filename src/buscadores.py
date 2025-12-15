@@ -191,8 +191,8 @@ class BuscadorPorPalabrasClave(Buscador):
     def get_palabras(self):
         return self.palabras_clave.lower()
 
-        #raise Exception("\n--->BuscadorPorPalabrasClave::get_palabras. NO IMPLEMENTADO!!!\n")
+       
 
     def estan_todas(self,pub_keywords_lower):
         pass
-        #raise Exception("\n--->BuscadorPorPalabrasClave::estan_todas. NO IMPLEMENTADO!!!\n")
+        
