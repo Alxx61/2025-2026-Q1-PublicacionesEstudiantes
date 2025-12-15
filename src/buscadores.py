@@ -178,7 +178,7 @@ class BuscadorPorPalabrasClave(Buscador):
     def busca(self,publicaciones):
         resultat = []
         for publicacion in publicaciones.values():
-            if self.palabras_clave in publicacion:
+            if all(palabra in publicacion for palabra in self.palabras_clave):
                 resultat.append(publicacion)
 
         return resultat
