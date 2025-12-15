@@ -1,5 +1,6 @@
 from caosdeuso import Controlador
 from gestordatos import GestorDeDatos
+from caosdeuso import Controlador
 from comparadores import *
 from buscadores import *
 from ordenador import Ordenador
@@ -62,8 +63,9 @@ class EjecutorDesdeMemoria:
 
     def ejecuta(self):
         publicaciones=GestorDeDatos.cargar_publicaciones_de_prueba()
-        for publicacion in publicaciones:
-            self.añadir_publicacion(publicacion)
+        controlador=Controlador()
+        for i in publicaciones:
+            self.add_publicacion=controlador.add_publicacion(i)
 
         self.resultado.append("--- Publicaciones cargadas inicialmente ---")
         self.resultado.extend([str(p) for p in self.publicacion])
@@ -83,6 +85,8 @@ class EjecutorDesdeMemoria:
         self._repetir_ordenaciones(publicacion_fecha)
 
         return self.resultado
+
+
 
 
 
