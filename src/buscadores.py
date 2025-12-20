@@ -165,8 +165,8 @@ class BuscadorPorPalabrasClave(Buscador):
     #
     #  @param palabra La palabra clave a añadir.
     def add_palabra(self,palabra):
-        palabra = palabra.lower #raise Exception("\n--->BuscadorPorPalabrasClave::add_palabra. NO IMPLEMENTADO!!!\n")
-        self.palabras_clave.append(palabra)
+        palabra_n = palabra.lower() #raise Exception("\n--->BuscadorPorPalabrasClave::add_palabra. NO IMPLEMENTADO!!!\n")
+        self.palabras_clave.append(palabra_n)
 
     ## @brief Busca en el mapa de publicaciones y devuelve una lista de aquellas
     #  cuyas palabras clave contengan *todas* las palabras clave definidas
