@@ -44,9 +44,8 @@ class Controlador:
     #  utilizará para ordenar los resultados de la búsqueda.
     #  @return Una <b>nueva</b> lista de Publicacion, filtrada y ordenada.
     def buscar_y_ordenar(self,ordenador):
-        lista=self.buscador.filtrar(self.buscador)
-        lista_ordenada=ordenador.ordenar(lista)
-        return lista_ordenada
+        lista= self.buscador.busca(self.publicaciones)
+        return ordenador.ordena(lista)
 
     # --- Getters y Setters ---
 
