@@ -1,6 +1,9 @@
 ## @brief Controlador principal de la aplicación.
 #  @details Gestiona las colecciones de autores y publicaciones, y
 #  coordina las operaciones de búsqueda y ordenación.
+from dominio import Publicacion
+
+
 class Controlador:
 
     ## @brief Constructor de Controlador.
@@ -28,10 +31,12 @@ class Controlador:
     #
     #  @param publicacion La publicación a añadir.
     def add_publicacion(self, publicacion):
-        self.publicaciones[publicacion.get_id()] = publicacion
-        for autor in publicacion.get_autores():
-            if autor.get_id() not in self.autores:
-                self.add_autor(autor)
+        self.publicaciones[publicacion.get_id()]=publicacion
+        autores=publicacion.get_autor()
+        if autores:
+            for autor in autores:
+                if autor.get_id() not in self.autores:
+                    self.add_autor(autor)
 
 
     ## @brief Ejecuta una búsqueda y ordena los resultados.
