@@ -47,15 +47,18 @@ class LectorPublicaciones:
             print(i)
             temp = i.split(LectorPublicaciones._DELIM_CAMPO) # temp es una llista
             autores = temp[4].split(LectorPublicaciones._DELIM_LISTA) # llista de autors separada per | nom:cognom:cognom
+            palabras_clave = temp[5].split(LectorPublicaciones._DELIM_LISTA)
             for k in autores:
                 nombre, apellido, segundo_apellido = k.split(LectorPublicaciones._DELIM_AUTOR)
                 autor = Autor(nombre, apellido, segundo_apellido)
                 autor_lista.append(autor)
+
+            palabras_clave = temp[5].split(LectorPublicaciones._DELIM_LISTA) # llista de paraules clau
             if temp[0] == "LIBRO":
                 #      TIPO;ID;TITULO;FECHA_AAAAMM;AUTORES;PALABRAS_CLAVE;EDITORIAL
-                pub  = Libro(temp[2],temp[1],autor_lista,temp[5], temp[3], temp[6])#titulo, id, autores, palabras_clave, fecha
+                pub  = Libro(temp[2],temp[1],autor_lista,palabras_clave, temp[3], temp[6])#titulo, id, autores, palabras_clave, fecha
             elif temp[0] == "ARTICULO":
-                pub = ArticuloEnRevista(temp[2],temp[1],autor_lista ,temp[5], temp[3])
+                pub = ArticuloEnRevista(temp[2],temp[1],autor_lista ,palabras_clave, temp[3])
 
             dic[temp[1]] = pub
 
