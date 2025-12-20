@@ -68,7 +68,7 @@ class Autor:
     #
     #  @param publicacion El objeto Publicacion a añadir.
     def add_publicacion(self,publicacion: 'Publicacion'):
-        self.publicaciones[publicacion.get_ID()]=publicacion
+        self.publicaciones[publicacion.get_id()]=publicacion
 
     ## @brief Devuelve un String con la información del autor.
     #  @details NO MODIFICAR EL métode.
