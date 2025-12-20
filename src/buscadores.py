@@ -133,8 +133,11 @@ class BuscadorPorNombres(Buscador):
         for publicacion in publicaciones.values():
             for autor in  publicacion.get_autores():
                 nombre = autor.get_nombre() + " " + autor.get_apellidos()
-                if nombre in self.nombres: 
-                    resultat.append(publicacion)
+
+                for nombre_busc in self.nombres:
+                    if nombre.lower() ==  nombre_busc.lower(): 
+                       resultat.append(publicacion)
+                       break
         return resultat
     # --- Getters ---
 
