@@ -44,7 +44,18 @@ class ComparadorApellidos(Comparator):
     #  @return Un valor negativo si el apellido de p1 es anterior,
     #  positivo si es posterior, o 0 si son iguales o si ambas no tienen autores.
     def compare(self,p1,p2):
-        apellido_min1=p1.autores[0].apellidos
+       apellido_1 = self.get_primer_apellido(p1)
+       apellido_2 = self.get_primer_apellido(p2)
+
+       if apellido_1 < apellido_2:
+           return -1
+       elif apellido_1 > apellido_2:
+           return 1
+       else:
+           return 0
+
+
+       """ apellido_min1=p1.autores[0].apellidos
         for i in range(1,len(p1.autores)):
             autor=p1.autores[i]
             if autor.apellido<apellido_min1:
@@ -59,7 +70,7 @@ class ComparadorApellidos(Comparator):
         elif apellido_min1>apellido_min2:
             return 1
         else:
-            return 0
+            return 0"""
 
 
     ## @brief métode de utilidad para encontrar el apellido lexicográficamente
