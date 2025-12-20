@@ -74,7 +74,7 @@ class ComparadorApellidos(Comparator):
         
         for autor in pub.get_autores():
             if autor.get_apellidos()<apellido:
-                apellido=autor.get_apellidos()
+               apellido=autor.get_apellidos() 
                 
         return apellido
 
