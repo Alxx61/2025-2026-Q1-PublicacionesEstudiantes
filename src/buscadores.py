@@ -58,7 +58,7 @@ class BuscadorPorIntervalo(Buscador):
     #  (AAAAMM) o si la fecha fin es anterior a la fecha inicial.
     def __init__(self,inicio,fin):
         if int(fin)<int(inicio) or len(inicio)!=6 or len(fin)!=6:
-            raise IntervaloException
+            raise IntervaloException("Formato Incorrecto")
         else:
             self.inicio = inicio
             self.fin = fin
