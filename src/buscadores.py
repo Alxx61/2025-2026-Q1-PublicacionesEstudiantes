@@ -76,7 +76,7 @@ class BuscadorPorIntervalo(Buscador):
     def busca(self,publicaciones):
         lista=[]
         for publicacion in publicaciones.values():
-            if publicacion.fecha>=self.inicio and publicacion.fecha<=self.fin:
+            if (publicacion.get_fecha()>=self.inicio) and (publicacion.get_fecha()<=self.fin):
                 lista.append(publicacion)
         return lista
         #raise Exception("\n--->BuscadorPorIntervalo::busca. NO IMPLEMENTADO!!!\n")
