@@ -45,12 +45,18 @@ class LectorPublicaciones:
         for i in file.readlines():
             autor_lista = []  # objectes de classe autor
             print(i)
-            temp = i.split("_DELIM_CAMPO") # temp es una llista
-            autores = temp[4].split("_DELIM_LISTA") # llista de autors separada per | nom:cognom:cognom
+            temp = i.split(LectorPublicaciones._DELIM_CAMPO) # temp es una llista
+            autores = temp[4].split(LectorPublicaciones._DELIM_LISTA) # llista de autors separada per | nom:cognom:cognom
             for k in autores:
-                autor = Autor(k[0],k[1]) #nom i primer cognom
+                nombre, apellido, segundo_apellido = k.split(LectorPublicaciones._DELIM_AUTOR)
+                autor = Autor(nombre, apellido, segundo_apellido)
                 autor_lista.append(autor)
-            pub  = Publicacion(temp[2],temp[1],autor_lista,temp[3])#titulo, id, autores, palabras_clave, fecha
+            if temp[0] == "LIBRO":
+                #      TIPO;ID;TITULO;FECHA_AAAAMM;AUTORES;PALABRAS_CLAVE;EDITORIAL
+                pub  = Libro(temp[2],temp[1],autor_lista,temp[5], temp[3], temp[6])#titulo, id, autores, palabras_clave, fecha
+            elif temp[0] == "ARTICULO":
+                pub = ArticuloEnRevista(temp[2],temp[1],autor_lista ,temp[5], temp[3])
+
             dic[temp[1]] = pub
 
 
