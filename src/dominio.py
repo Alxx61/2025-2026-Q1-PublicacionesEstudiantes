@@ -68,17 +68,17 @@ class Autor:
     #
     #  @param publicacion El objeto Publicacion a añadir.
     def add_publicacion(self,publicacion: 'Publicacion'):
-        self.publicaciones[publicacion.ID]=publicacion
+        self.publicaciones[publicacion.get_ID()]=publicacion
 
     ## @brief Devuelve un String con la información del autor.
     #  @details NO MODIFICAR EL métode.
     #  @return String formateado como se indica en el documento enunciado del proyecto
     def __str__(self):
-        result = f"{self._nombre}:{self._apellidos}"
-        if not self._institucion:
+        result = f"{self.nombre}:{self.apellidos}"
+        if not self.institucion:
             result +=":N/A"
         else:
-            result +=self._institucion
+            result +=f":{self.institucion}"
         return result
 
 ## @brief Clase abstracta que define una publicación genérica.
