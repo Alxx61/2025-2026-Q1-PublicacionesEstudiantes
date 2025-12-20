@@ -18,7 +18,7 @@ class Controlador:
     #
     #  @param autor El objeto Autor a añadir.
     def add_autor(self,autor):
-        self.autores[autor.id]=autor
+        self.autores[autor.get_id()]=autor
 
 
     ## @brief Añade una publicación al mapa de publicaciones.
@@ -28,11 +28,11 @@ class Controlador:
     #
     #  @param publicacion La publicación a añadir.
     def add_publicacion(self, publicacion):
-        for autor in publicacion.autors:
+        for autor in publicacion.get_autors():
             if autor not in self.autores:
-                self.autores[autor.id]=autor
-        if publicacion.id not in self.publicaciones:
-            self.publicaciones[publicacion.id]=publicacion
+                self.autores[autor.get_id()]=autor
+        if publicacion.get_id() not in self.publicaciones:
+            self.publicaciones[publicacion.get_id()]=publicacion
 
 
     ## @brief Ejecuta una búsqueda y ordena los resultados.
