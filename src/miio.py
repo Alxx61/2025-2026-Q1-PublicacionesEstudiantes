@@ -58,7 +58,7 @@ class LectorPublicaciones:
                 #      TIPO;ID;TITULO;FECHA_AAAAMM;AUTORES;PALABRAS_CLAVE;EDITORIAL
                 pub  = Libro(temp[2],temp[1],autor_lista,palabras_clave, temp[3], temp[6])#titulo, id, autores, palabras_clave, fecha
             elif temp[0] == "ARTICULO":
-                pub = ArticuloEnRevista(temp[2],temp[1],autor_lista ,palabras_clave, temp[3])
+                pub = ArticuloEnRevista(temp[2],temp[1],autor_lista ,palabras_clave, temp[3], float(temp[7]), temp[6])
 
             dic[temp[1]] = pub
 
