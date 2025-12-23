@@ -9,7 +9,7 @@ class IntervaloException(Exception):
     #
     #  @param message El mensaje descriptivo del error.
     def __init__(self, message: str):
-        self.message = message #raise Exception("\n--->IntervaloException::__init__. NO IMPLEMENTADO!!!\n")
+        self.message = message 
 
 from abc import ABC, abstractmethod
 
@@ -62,7 +62,7 @@ class BuscadorPorIntervalo(Buscador):
         else:
             self.inicio = inicio
             self.fin = fin
-        #raise Exception("\n--->BuscadorPorIntervalo::__init__. NO IMPLEMENTADO!!!\n")
+       
 
     ## @brief Busca en el mapa de publicaciones y devuelve una lista de aquellas
     #  cuya fecha de publicación esté dentro del intervalo [inicio, fin].
@@ -79,7 +79,7 @@ class BuscadorPorIntervalo(Buscador):
             if (publicacion.get_fecha()>=self.inicio) and (publicacion.get_fecha()<=self.fin):
                 lista.append(publicacion)
         return lista
-        #raise Exception("\n--->BuscadorPorIntervalo::busca. NO IMPLEMENTADO!!!\n")
+       
 
     # --- Getters ---
 
@@ -104,7 +104,7 @@ class BuscadorPorNombres(Buscador):
     ## @brief Constructor de BuscaPorNombres.
     #  Inicializa la lista interna de nombres de autores como una lista vacía.
     def __init__(self):
-        self.nombres = []    #raise Exception("\n--->BuscadorPorNombres::__init__. NO IMPLEMENTADO!!!\n")
+        self.nombres = []    
 
     ## @brief Añade un nombre de autor a la lista de criterios de búsqueda.
     #
@@ -112,7 +112,7 @@ class BuscadorPorNombres(Buscador):
     #  formato "Nombre Apellidos" (nombre y apellidos separados
     #  por un espacio en blanco).
     def add_nombre(self,nombre: str):
-        self.nombres.append(nombre) #raise Exception("\n--->BuscadorPorNombres::add_nombre. NO IMPLEMENTADO!!!\n")
+        self.nombres.append(nombre) 
 
     ## @brief Busca en el mapa de publicaciones y devuelve una lista de aquellas
     #  que tengan al menos un autor que coincida con la lista interna.
@@ -144,7 +144,7 @@ class BuscadorPorNombres(Buscador):
     ## @brief Obtiene la lista de nombres de autores utilizada para la búsqueda.
     #  @return La lista de nombres (formato "Nombre Apellidos").
     def get_nombres(self):
-        return self.nombres   #raise Exception("\n--->BuscadorPorNombres::get_nombres. NO IMPLEMENTADO!!!\n")
+        return self.nombres   
 
 
 # Asumimos que Buscador y Publicacion están disponibles.
@@ -158,14 +158,14 @@ class BuscadorPorPalabrasClave(Buscador):
     ## @brief Constructor para BuscadorPorPalabrasClave.
     #  Inicializa la lista de palabras clave como una lista vacía.
     def __init__(self):
-        self.palabras_clave = [] #raise Exception("\n--->BuscadorPorPalabrasClave::__init__. NO IMPLEMENTADO!!!\n")
+        self.palabras_clave = [] 
 
     ## @brief Añade una palabra clave a la lista de búsqueda.
     #  La palabra se convierte a minúsculas antes de ser añadida.
     #
     #  @param palabra La palabra clave a añadir.
     def add_palabra(self,palabra):
-        palabra_n = palabra.lower() #raise Exception("\n--->BuscadorPorPalabrasClave::add_palabra. NO IMPLEMENTADO!!!\n")
+        palabra_n = palabra.lower() 
         self.palabras_clave.append(palabra_n)
 
     ## @brief Busca en el mapa de publicaciones y devuelve una lista de aquellas
@@ -185,14 +185,6 @@ class BuscadorPorPalabrasClave(Buscador):
                 res.append(publicacion)
         return res
 
-
-        """resultat = []
-        for publicacion in publicaciones.values():
-            if all(palabra in publicacion for palabra in self.palabras_clave):
-                resultat.append(publicacion)
-
-        return resultat"""
-        #raise Exception("\n--->BuscadorPorPalabrasClave::__init__. NO IMPLEMENTADO!!!\n")
 
     # --- Getters ---
 
